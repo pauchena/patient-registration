@@ -7,7 +7,7 @@ A full-stack patient registration application built with Laravel (Backend) and R
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:pauchena/patient-registration.git
 cd patient-registry
 ```
 
@@ -56,6 +56,13 @@ The frontend will be available at `http://localhost:3000`
    cd backend
    docker-compose restart app queue
    ```
+
+## Development Testing Notes
+
+- Tested in a local development environment using Docker and Mailtrap.
+- Emails are being sent correctly, but they do not arrive in real inboxes because Mailtrap is a sandbox SMTP service that captures messages for inspection.
+
+![Patient Registry - Mailtrap Email](./docs/assets/email-notification.png)
 
 ## API Endpoints
 
@@ -125,9 +132,36 @@ Content-Type: multipart/form-data
 
 - **Full Name**: Required, only letters and spaces
 - **Email**: Required, valid email format, must be @gmail.com, unique
-- **Phone Country Code**: Required, format: +XXX
+- **Phone Country Code**: Required, format: +XXX (1-4 digits)
 - **Phone Number**: Required, only digits
 - **Document Photo**: Required, JPG/JPEG only, max 5MB
+
+## Additional Features
+
+### Delete Patient Functionality
+
+Although not explicitly required in the initial specification, a **delete patient feature** has been implemented to enhance testing and user experience. This allows users to:
+
+- Remove previously registered patients
+- Re-register a patient with the same email address after deletion
+- Confirmation modal prevents accidental deletions
+
+**Endpoint:**
+
+```
+DELETE /api/v1/patients/{id}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "Patient deleted successfully"
+}
+```
+
+![Patient Registry - Delete Feature](./docs/assets/delete-feature.png)
 
 ## Development Commands
 
