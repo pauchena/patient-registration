@@ -206,10 +206,18 @@ npm run format
 
 ## Testing
 
-### Backend Testing
+### Backend Unit Tests
 
 ```bash
-docker exec -it laravel_app php artisan test
+cd backend
+php artisan test --testsuite=Unit
+```
+
+### Frontend Unit Tests
+
+```bash
+cd frontend
+npm test -- --run
 ```
 
 ## Docker Services
