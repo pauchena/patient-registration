@@ -1,6 +1,20 @@
 # Patient Registry Application
 
-A full-stack patient registration application built with Laravel (Backend) and React + TypeScript (Frontend).
+Patient registration application built with Laravel and React + TypeScript.
+
+## App Views
+
+### Registration Form
+
+Form for registering new patients with validation and document photo upload.
+
+![Patient Registration Form](./docs/assets/patient-form.png)
+
+### Patients List
+
+View and manage all registered patients with delete functionality and expandable details.
+
+![Registered Patients List](./docs/assets/patient-list.png)
 
 ## Setup Instructions
 
@@ -57,7 +71,7 @@ The frontend will be available at `http://localhost:3000`
    docker-compose restart app queue
    ```
 
-## Development Testing Notes
+#### Development Testing Notes
 
 - Tested in a local development environment using Docker and Mailtrap.
 - Emails are being sent correctly, but they do not arrive in real inboxes because Mailtrap is a sandbox SMTP service that captures messages for inspection.
