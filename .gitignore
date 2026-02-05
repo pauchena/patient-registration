@@ -1,0 +1,23 @@
+# See backend/.gitignore and frontend/.gitignore for specific ignores
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Docker
+.docker/
+
+# Environment
+.env.local
+.env.*.local
